@@ -1,0 +1,29 @@
+.navbar{
+    background: #232526;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to left, #414345, #232526);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to left, #414345, #232526); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    width: 100%;
+    height: 13vh;
+}
+.nav{
+    display: flex;
+    justify-content: space-between;
+    padding: 1.5rem;
+}
+.logo{
+    color: greenyellow;
+    font-size: 2.5rem;
+    font-family: 'Playfair Display', serif;
+    padding-left: 1rem;
+}
+.navItem{
+    flex-direction: row;
+    align-self: center;
+    padding-right: 3rem;
+}
+.navItem a{
+    color: aliceblue;
+    margin: 1rem;
+    text-decoration: none;
+    font-size: 1.1rem;
+}
