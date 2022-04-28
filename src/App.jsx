@@ -9,9 +9,7 @@ function App() {
   return (
     <div className="App">
       <NavBar/>
-      <ItemListContainer>
-        <ItemCount/>
-      </ItemListContainer>
+      <ItemListContainer/>
     </div>
   );
 }
