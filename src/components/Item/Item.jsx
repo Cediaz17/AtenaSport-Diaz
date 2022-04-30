@@ -7,7 +7,7 @@ function Item ({item})
         <div className='box'>
             <div>{item.titulo}</div>
             <div>
-                <img src={item.rutaImg} alt="Img producto" />
+                <img className='imagen-Producto' src={item.rutaImg} alt="Img producto" />
             </div>
             <div>
                 {item.precio}
@@ -15,4 +15,4 @@ function Item ({item})
         </div>
     )
 }
-export default Item
+export default Item;

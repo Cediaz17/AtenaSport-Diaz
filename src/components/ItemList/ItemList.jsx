@@ -1,13 +1,15 @@
 import React from 'react';
 import Item from '../Item/Item';
+import './ItemList.css'
 
 
-function ItemList ({ items })
+function ItemList ({items})
 {
     return 
-    (
-        {items.map(item=> <Item item={item} key={item.id} />)}
+    (   
+        <div className='item-list'>
+        {items.map(item => <Item item={item} key={item.id} />)}
+        </div>
     )
-
 }
-export default ItemList
+export default ItemList;
