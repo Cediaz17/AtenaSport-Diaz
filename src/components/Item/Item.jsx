@@ -5,14 +5,14 @@ function Item ({item})
 {
     return (
         <div className='box'>
-            <div>{item.titulo}</div>
-            <div>
-                <img className='imagen-Producto' src={item.rutaImg} alt="Img producto" />
+            <div  className='imagen-Producto'>
+                <img src={item.rutaImg} alt="Img producto" />
             </div>
+            <div className='box-titulo'>{item.titulo}</div>
             <div>
                 {item.precio}
             </div>
         </div>
     )
 }
-export default Item;
+export default Item
