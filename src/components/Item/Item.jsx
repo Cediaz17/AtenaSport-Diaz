@@ -9,7 +9,7 @@ function Item ({item})
                 <img src={item.rutaImg} alt="Img producto" />
             </div>
             <div className='box-titulo'>{item.titulo}</div>
-            <div>
+            <div className='box-precio'>
                 {item.precio}
             </div>
         </div>

@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-//import ItemCount from '../ItemCount/ItemCount';
 import ItemList from '../ItemList/ItemList';
 import './ItemListContainer.css';
 
@@ -41,26 +40,17 @@ function getProductos ()
 }
 
 
-function ItemListContainer () {
-//     function agregarCarrito()
-//     {
-//         console.log("Agregaste al carrito");
-//     }
-//     return ( 
-//         <div className="fondo">
-//             <ItemCount initial={0} stock={6} onAdd={agregarCarrito}/>
-//         </div>
-//     );
+function ItemListContainer () 
+{
+    const [productos, setProductos] = useState([]);
 
-const [productos, setProductos] = useState([]);
+    useEffect(()=> {
+        getProductos().then(res => { setProductos(res);})
+    }, []);
 
-useEffect(()=> {
-    getProductos().then(res => { setProductos(res);})
-}, []);
-
-return(
-    <div className='background-ate'>
-        <ItemList items={productos} />
-    </div>
-)}
+    return(
+        <div className='background-ate'>
+            <ItemList items={productos} />
+        </div>
+    )}
 export default ItemListContainer

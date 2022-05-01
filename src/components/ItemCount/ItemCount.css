@@ -4,3 +4,23 @@
     width: 10vh;
     justify-content: center;
 }
+.box-contador
+{
+    height: 15vh;
+    width: 40vh;
+}
+.bloque
+{
+    margin: 10px;
+}
+
+.bloque button
+{
+    height: 25px;
+    width: 30px;
+}
+.bloque input
+{
+    height: 15px;
+    width: 150px;
+}

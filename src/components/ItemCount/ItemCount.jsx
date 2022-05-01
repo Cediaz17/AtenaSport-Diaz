@@ -18,8 +18,8 @@ function ItemCount ({stock, initial, onAdd}) {
         }
     }
     return ( 
-        <div className=''>
-            <div>
+        <div className='box-contador'>
+            <div className='bloque'>
             <button onClick={() => handleRestar()}>-</button>
             <input value={count} />
             <button onClick={() => handleSumar()}>+</button>
