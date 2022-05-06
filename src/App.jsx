@@ -1,8 +1,8 @@
 import './App.css';
+import { Routes, Route } from 'react-router-dom';
 import NavBar from './components/NavBar/NavBar';
-///import ItemCount from './components/ItemCount/ItemCount';
-import ItemListContainer from './components/ItemListContainer/ItemListContainer';
-import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
+import ItemListContainer from './pages/ItemListContainer/ItemListContainer';
+import ItemDetailContainer from './pages/ItemDetailContainer/ItemDetailContainer';
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&display=swap');
 </style>
@@ -11,8 +11,11 @@ function App() {
   return (
     <div className="App">
       <NavBar/>
-      {/* <ItemListContainer /> */}
-      <ItemDetailContainer/>
+      <Routes>
+        <Route path='/' element={<ItemListContainer />}/>
+        <Route path='/catalogo/:catalogoid' element={<ItemListContainer/>} />
+        <Route path='/item/:id' element={<ItemDetailContainer/>} />
+      </Routes>
     </div>
   );
 }
