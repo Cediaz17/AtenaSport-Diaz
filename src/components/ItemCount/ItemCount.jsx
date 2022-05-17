@@ -5,7 +5,7 @@ function ItemCount ({stock, initial, onAdd}) {
     const [count, setCount] = useState(initial);
     function handleRestar ()
     {
-        if(count>0)
+        if(count>1)
         {
             setCount(count -1)
         }
@@ -21,7 +21,7 @@ function ItemCount ({stock, initial, onAdd}) {
         <div className='box-contador'>
             <div className='bloque'>
             <button onClick={() => handleRestar()}>-</button>
-            <input value={count} />
+            <input readOnly value={count} />
             <button onClick={() => handleSumar()}>+</button>
             </div>
             <button onClick={() => onAdd(count)}>Agregar al Carrito </button>

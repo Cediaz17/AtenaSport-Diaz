@@ -1,0 +1,16 @@
+.item-cart
+{
+    display: flex;
+    width: 80%;
+    height: 100px;
+    margin: 20px;
+    justify-content: space-evenly;
+    border-style: solid;
+    align-items: center;
+    padding: 10px;
+}
+
+.button-eliminar{
+    border-style: solid;
+    
+}

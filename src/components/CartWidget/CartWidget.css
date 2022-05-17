@@ -2,4 +2,20 @@
 {
     width: 6vh;
     height: 6vh;
+    position: relative;
+}
+.cart-box-carrito
+{
+    width: 50px;
+    height: 40px;
+}
+.cart-box-count
+{
+    width: 13px;
+    height: 20px;
+    color: white;
+    position: absolute;
+    top: 29px;
+    right: 39px;
+    background: transparent;
 }

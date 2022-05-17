@@ -1,5 +1,6 @@
 import React from 'react';
 import './Item.css';
+import { Link } from 'react-router-dom';
 
 function Item ({item})
 {
@@ -12,6 +13,7 @@ function Item ({item})
             <div className='box-precio'>
                 {item.precio}
             </div>
+            <button> <Link to = {`/item/${item.id}`}> Ver Detalle</Link></button>
         </div>
     )
 }

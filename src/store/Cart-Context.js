@@ -2,57 +2,70 @@ import React, { createContext, useState} from 'react';
 
 const CartContext = createContext (
     {
-        productos:[],
-        agregarProducto: () => {},
-        eliminarProducto:() =>{},
-        limpiar: () => {},
-        estaEn:() =>{},
-        obtenerTotal:() =>{}
+        products:[],
+        addProduct: () => {},
+        removeProduct:() =>{},
+        clear: () => {},
+        isInCart:() =>{},
+        getCartQuantity:() =>{},
+        getTotalPrice: () => {}
     }
 );
 
 export const CartContextProvider = ({ children }) => {
-    const [listadoPro, setListadoPro] = useState([]);
+    const [productList, setProductList] = useState([]);
 
-    const eliminarProducto = (id) => {
-        const idEliminar = listadoPro.findIndex(item => item.id === id);
-        if(listadoPro[idEliminar].cantidad === 1){
-            setListadoPro(listadoPro.filter(valor => valor.id !== id))
+    const removeProduct = (id) => {
+        const idEliminar = productList.findIndex(item => item.id === id);
+        console.log(idEliminar);
+        console.log(productList[idEliminar]);
+        console.log(productList[idEliminar].cant);
+        if(productList[idEliminar].cant === 1){
+            setProductList(productList.filter(valor => valor.id !== id))
         } else {
-            setListadoPro(listadoPro.map(val => val.id === id ? {...val, cantidad : val.cantidad -1} : val));
+            setProductList(productList.map(val => val.id === id ? {...val, cant : val.cant -1} : val));
         }
     }
 
-    const agregarProducto = (producto) => {
-        const idproducto = listadoPro.findIndex(item => item.id === producto.id )
+    const addProduct = (producto) => {
+        const idproducto = productList.findIndex(item => item.id === producto.id )
         if(idproducto !== -1) {
-            setListadoPro(listadoPro.map( valor => valor.id === producto.id ? {...valor, cantidad : valor.cantidad + producto.cantidad} : valor));
+            setProductList(productList.map( valor => valor.id === producto.id ? {...valor, cantidad : valor.cantidad + producto.cantidad} : valor));
         } else {
-            setListadoPro([producto, ...listadoPro]);
+            setProductList([producto, ...productList]);
         }
     }
 
-    const estaEn = (id) => {
-        return listadoPro.map(valor => valor.id).indexOf(id) !== -1;
+    const isInCart = (id) => {
+        return productList.map(valor => valor.id).indexOf(id) !== -1;
     }
-    const limpiar = () => {
-        setListadoPro([]);
+    const clear = () => {
+        setProductList([]);
     }
-    const obtenerTotal = () => {
-        return listadoPro.reduce((total, valor) =>{
-            return total + valor.cantidad
+    const getCartQuantity = () => {
+        return productList.reduce((total, valor) => {
+            return total + valor.cant
+        }, 0)
+    }
+    const getTotalPrice = () => 
+    {
+        return productList.reduce((total, valor) => {
+            return total + valor.cant * valor.precio
         }, 0)
     }
 
     return (
         <CartContext.Provider value={{
-            productos : listadoPro,
-            agregarProducto,
-            eliminarProducto,
-            limpiar,
-            estaEn,
-            obtenerTotal
-        }} >    {children}</CartContext.Provider> 
+            products : productList,
+            addProduct,
+            removeProduct,
+            clear,
+            isInCart,
+            getCartQuantity,
+            getTotalPrice
+        }} >    
+        {children}
+        </CartContext.Provider> 
     )
 }
 
