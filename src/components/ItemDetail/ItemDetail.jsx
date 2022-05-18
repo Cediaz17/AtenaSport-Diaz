@@ -11,13 +11,13 @@ function ItemDetail ({item})
     {
         cartContx.addProduct({cant:cantidad, ...item});
     }
-    return (
+    return ( 
         <div className='box-detalle-g'>
             <div className='imagen-detalle'>
                 <img src={item.rutaImg} alt="Img producto" />
             </div>
             <div className='box-detalle-m'>
-                <div className='box-titulo'>{item.titulo}</div>
+                <div className='box-titulo'> <h1>{item.titulo}</h1></div>
                 <div className='box-precio'>${item.precio}</div>
                 {<div>
                     <ItemCount initial={1} stock={item.stock} onAdd={addHandler} />
@@ -26,7 +26,7 @@ function ItemDetail ({item})
                         <button onClick={() => console.log(cartContx.isInCart(item.id))} >Esta en el carrito</button>
                         <button onClick={() => console.log(cartContx.getCartQuantity())} >Cantidad</button> */}
                     { 
-                        cartContx.products.length &&
+                        cartContx.products.length === 0? '':
                         <button onClick={() => console.log(cartContx)}>
                             <Link to='/cart'>
                                 Finalizar compra ({cartContx.getCartQuantity()})

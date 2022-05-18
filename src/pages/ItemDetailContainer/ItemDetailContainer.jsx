@@ -74,6 +74,7 @@ function ItemDetailContainer ()
     }, [id]);
     
     return (
+        
         <div className='detalle-grop'>
             <ItemDetail item= {producto} />
         </div>
