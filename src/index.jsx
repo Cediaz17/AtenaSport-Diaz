@@ -5,7 +5,17 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from 'react-router-dom';
 import { CartContextProvider } from './store/Cart-Context.js';
+import { initializeApp } from "firebase/app";
+const firebaseConfig = {
+  apiKey: "AIzaSyAq-hs0kKLA_wWGraYe8oxOcQEaLqokW9g",
+  authDomain: "ateneasport2022.firebaseapp.com",
+  projectId: "ateneasport2022",
+  storageBucket: "ateneasport2022.appspot.com",
+  messagingSenderId: "606692297213",
+  appId: "1:606692297213:web:51ed310ba199784427b194"
+};
 
+initializeApp(firebaseConfig);
 
 ReactDOM.render(
   <React.StrictMode>

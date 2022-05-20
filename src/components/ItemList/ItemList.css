@@ -1,6 +1,7 @@
 .item-list{
     height: 75%;
-    width: 90%;
+    width: 95%;
     display: flex;
     padding: 15px;
+    flex-wrap: wrap;
 }
