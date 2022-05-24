@@ -18,7 +18,9 @@ function Cart ()
                 <div className='cart-box'>
                     {cartContx.products.map(producto => <ItemCart key={producto.id} item={producto}/>)}
                     {`Precio total: ${cartContx.getTotalPrice()}`}
+                    <Link to={'/checkout'}>
                     <button>Finalizar Compra</button>
+                    </Link>
                 </div>
             }
         </div>

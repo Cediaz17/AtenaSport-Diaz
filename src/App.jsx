@@ -4,6 +4,7 @@ import NavBar from './components/NavBar/NavBar';
 import ItemListContainer from './pages/ItemListContainer/ItemListContainer';
 import ItemDetailContainer from './pages/ItemDetailContainer/ItemDetailContainer';
 import Cart from './pages/Cart/Cart';
+import CheckOut from './pages/CheckOut/checkout';
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&display=swap');
 </style>
@@ -17,6 +18,7 @@ function App() {
         <Route path='/cart' element = {<Cart/>}/>
         <Route path='/catalogo/:catalogoid' element={<ItemListContainer/>} />
         <Route path='/item/:id' element={<ItemDetailContainer/>} />
+        <Route path='/checkout' element = {<CheckOut/>}/>
       </Routes>
     </div>
   );
