@@ -2,26 +2,14 @@ import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import ItemList from '../../components/ItemList/ItemList';
 import './ItemListContainer.css';
-import { collection, getDocs, getFirestore, query, where} from 'firebase/firestore';
+import { getAllItems, getItemById } from '../../services/firebase/firebase';
 
 
 
 function getProductos (categoria)
 {
-    const db = getFirestore();
-    const itemsCollection = collection(db, 'items');
-    if(categoria) {
-        const q = query(itemsCollection, where('categoria', '==', categoria));
-        return getDocs(q)
-                .then((snapshot) => { 
-                    return snapshot.docs.map(doc => ({id: doc.id, ...doc.data()}));
-                });
-    } else {
-        return getDocs(itemsCollection)
-                .then((snapshot) => { 
-                    return snapshot.docs.map(doc => ({id: doc.id, ...doc.data()}));
-                });  
-    }  
+    const snapshot = (categoria ? getItemById(categoria) :getAllItems());
+    return snapshot.docs.map(doc =>({id: doc.id, ...doc.data()}));
 }
 
 
