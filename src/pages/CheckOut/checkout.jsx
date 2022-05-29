@@ -1,12 +1,11 @@
-import { async } from '@firebase/util';
 import { createOrder, getItemById, updateItem } from '../../services/firebase/firebase';
 import React, { useContext, useState } from 'react';
 import CartContext from '../../store/Cart-Context';
+import Spinner from '../../components/spinner/spinner';
 const CheckOut = () =>{
     const [orderID, setOrderID] = useState()
     const [load, setLoad] = useState(false)
-    const {cartContx, getCartQuantity} = useContext(CartContext);
-
+    const cartContx = useContext(CartContext);
     const [buyer , setBuyer]= useState({Nombre:'', Telefono:'',Email:''});
     const {Nombre, Telefono, Email} = buyer
     const handleInputChange = (e) =>
@@ -23,32 +22,33 @@ const CheckOut = () =>{
         setLoad(false);
     };
 
-    const updateStock = (products) => {
-        for(const product of products) {
-            const item = getItemById(product.id);
-            updateItem(item.id, { stock: item.data().stock - product.quantity});
+    const updateStock = async (products) => {
+        for(const producto of products) {
+            const item = await getItemById(producto.id);
+            console.log(item);
+            updateItem(item.id, { stock: item.data().stock - producto.cant});
         }
     };
-    const handleSubmit = (e) =>
-    {
-        e.preventDefaul()
-        const dia = new Date() 
-        const items = cartContx.map(e => { return{id:e.id, title:e.titulo, price: e.precio,amount:e.amount}})
-        const total = getCartQuantity()
-        const data = {buyer,items, total, dia}
-        generateOrder(data);
+    const handleSubmit = event => {
+        event.preventDefault();
+        console.log(cartContx.products);
+        const order = {
+            buyer: { Nombre: buyer.Nombre, Telefono: buyer.Telefono, Email: buyer.Email },
+            items: cartContx.products.map(producto => ({id: producto.id, titulo: producto.titulo, precio: producto.precio, cantidad: producto.cant})),
+            date: new Date(),
+            total: cartContx.getTotalPrice()
+        }
+        generateOrder(order);
+        console.log(cartContx.products);
         updateStock(cartContx.products);
         cartContx.clear();
-    };  
+    };
     return (
-        load ? "spining" :
-        <div>
-            <h2>Finalizando Compra</h2>
-            <hr />
+            <div className='fondo'>
             {
-                orderID ? "Tenes un id de orden" 
-                        : cartContx.products.length === 0 ? "El carrito esta vacio"
-                        : <div>
+                orderID ? <div> <h3>Felicitaciones tu compra se realizo correctamente.</h3> <p> Dentro de las 72hs llegara tu pedido: {orderID} </p> </div>
+                :
+                <div>
                         <form onSubmit={handleSubmit}>
                             <input type="text" name="Nombre" id="name" value={Nombre} placeholder='Nombre' onChange={handleInputChange} />
                             <input type="number" name="Telefono" id="phone" value={Telefono} placeholder='Telefono' onChange={handleInputChange} />

@@ -21,10 +21,6 @@ function ItemDetail ({item})
                 <div className='box-precio'>${item.precio}</div>
                 {<div>
                     <ItemCount initial={1} stock={item.stock} onAdd={addHandler} />
-                        {/* <button onClick={() => console.log(cartContx.products)} >Mostrar carrito</button>
-                        <button onClick={() => cartContx.clear()} >Limpiar Carrito</button>
-                        <button onClick={() => console.log(cartContx.isInCart(item.id))} >Esta en el carrito</button>
-                        <button onClick={() => console.log(cartContx.getCartQuantity())} >Cantidad</button> */}
                     { 
                         cartContx.products.length === 0? '':
                         <button onClick={() => console.log(cartContx)}>
@@ -32,9 +28,6 @@ function ItemDetail ({item})
                                 Finalizar compra ({cartContx.getCartQuantity()})
                             </Link>
                         </button>
-                        //countproducts ? 
-                        //<button> <Link to='/cart'> Finalizar Compra ({ countProductos })</Link></button> :
-                        //<ItemCount initial={0} stock={item.stock} onAdd={addHandler}/>
                     }
                 </div>}
                 <div className='box-descripcion'>{item.descripcion}</div>

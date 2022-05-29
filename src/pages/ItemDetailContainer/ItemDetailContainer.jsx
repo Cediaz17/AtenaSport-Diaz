@@ -4,9 +4,8 @@ import ItemDetail from '../../components/ItemDetail/ItemDetail';
 import './ItemDetailContainer.css';
 import { getItemById } from '../../services/firebase/firebase';
 
-function getItem (id)
-{
-    const snapshot = getItemById(id);
+const getItem = async (itemId) => {
+    const snapshot = await getItemById(itemId);
     return snapshot.exists() ? {id: snapshot.id, ...snapshot.data()} : null;
 }
 
