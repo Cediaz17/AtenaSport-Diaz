@@ -6,22 +6,64 @@
 }
 .box-contador
 {
-    height: 15vh;
+    height: 28vh;
     width: 40vh;
-    margin: 25px;
+    margin: 15px;
 }
 .bloque
-{
-    margin: 10px;
+{   
+    margin-block: 25px;
+    height: 34%;
+    width: 90%;
+    display: flex;
+    align-items: center;
+    border-style: solid;
+    background: #efefef;
 }
-
+.botones-contador
+{
+    height: 100%;
+    width: 20%;
+}
 .bloque button
 {
-    height: 25px;
+    height: 30px;
     width: 30px;
 }
 .bloque input
 {
-    height: 15px;
-    width: 150px;
+    text-align: -webkit-match-parent;
+    height: 58%;
+    width: 50%;
+    border-style: none;
+    background: transparent;
+    border-bottom: 1.5px solid black;
+    font-size: 20px;
+}
+.botones-contador-valor button:hover{
+    transform: scale(1.1,1.1);
+    transition: all 3s;
+}
+.botones-contador-valor
+{
+    width: 50%;
+}
+.botones-contador-valor button{
+    border-color: #084659;
+    border-radius: 50%;
+    font-size: 20px;
+    -webkit-text-stroke: thick;
+    cursor: pointer;
+    border: style 0.2em solid;
+}
+.botonGenerico{
+    padding: 16px 66px;
+    border-radius: 30px;
+    border: 1.5px solid transparent;
+    justify-content: center;
+    align-items: center;
+    background: #084659;
+    color: #fff;
+    cursor: pointer;
+    margin-top: 10px;
 }

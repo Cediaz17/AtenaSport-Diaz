@@ -9,18 +9,22 @@ function Cart ()
     const cartContx = useContext(CartContext);
     console.log(cartContx);
     return (
-        <div>
+        <div className='cart'>
             {cartContx.getCartQuantity() === 0 ?
-                <div>
-                    <h2>No hay productos en tu carrito</h2>
+                <div className='cart-mensaje'>
+                    <h2> UPS! No hay productos en tu carrito</h2>
                     <button><Link to={`/`}>Ver Catalogo</Link> </button>    
                 </div>:
                 <div className='cart-box'>
                     {cartContx.products.map(producto => <ItemCart key={producto.id} item={producto}/>)}
-                    {`Precio total: ${cartContx.getTotalPrice()}`}
-                    <Link to={'/checkout'}>
-                    <button>Finalizar Compra</button>
-                    </Link>
+                    <div className='cart-box-result'>
+                        {`Precio total: ${cartContx.getTotalPrice()}`}
+                        <Link to={'/checkout'}>
+                            <div className='cart-box-result--bottom'>
+                                <p>Finalizar Compra</p>
+                            </div>
+                        </Link>
+                    </div>
                 </div>
             }
         </div>

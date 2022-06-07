@@ -1,7 +1,7 @@
 .navbar{
     background: #232526;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to left, #414345, #334525);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to left, #334525, #414345); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    /*background: -webkit-linear-gradient(to right, #010203, #0d768b);  /* Chrome 10-25, Safari 5.1-6 */
+    /*background: linear-gradient(to right, #094d62, #010203); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     width: 100%;
     height: 13vh;
 }
@@ -11,10 +11,11 @@
     padding: 1.5rem;
 }
 .logo{
-    color: greenyellow;
+    color: #8e9eab;
     font-size: 2.5rem;
     font-family: 'Playfair Display', serif;
     padding-left: 1rem;
+    -webkit-text-stroke-width: thin;
 }
 .navItem{
     flex-direction: row;

@@ -9,7 +9,7 @@ function ItemDetail ({item})
     const cartContx = useContext(CartContext);
     function addHandler(cantidad)
     {
-        cartContx.addProduct({cant:cantidad, ...item});
+        cartContx.addProduct({cant: cantidad, ...item});
     }
     return ( 
         <div className='box-detalle-g'>
@@ -17,19 +17,11 @@ function ItemDetail ({item})
                 <img src={item.rutaImg} alt="Img producto" />
             </div>
             <div className='box-detalle-m'>
-                <div className='box-titulo'> <h1>{item.titulo}</h1></div>
-                <div className='box-precio'>${item.precio}</div>
-                {<div>
+                <div className='box-titulo-d'> <h1>{item.titulo}</h1></div>
+                {<div className='box-contador-g'>
                     <ItemCount initial={1} stock={item.stock} onAdd={addHandler} />
-                    { 
-                        cartContx.products.length === 0? '':
-                        <button onClick={() => console.log(cartContx)}>
-                            <Link to='/cart'>
-                                Finalizar compra ({cartContx.getCartQuantity()})
-                            </Link>
-                        </button>
-                    }
                 </div>}
+                <div className='box-precio-d'>$ {item.precio}</div>
                 <div className='box-descripcion'>{item.descripcion}</div>
             </div>
         </div>

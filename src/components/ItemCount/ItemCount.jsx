@@ -20,11 +20,17 @@ function ItemCount ({stock, initial, onAdd}) {
     return ( 
         <div className='box-contador'>
             <div className='bloque'>
-            <button onClick={() => handleRestar()}>-</button>
-            <input readOnly value={count} />
-            <button onClick={() => handleSumar()}>+</button>
+                <div className='botones-contador-valor'>
+                    <button onClick={() => handleRestar()}>-</button>
+                </div>
+                <div>
+                    <input readOnly value={count} />
+                </div>
+                <div className='botones-contador-valor'>
+                    <button onClick={() => handleSumar()}>+</button>
+                </div>
             </div>
-            <button onClick={() => onAdd(count)}>Agregar al Carrito </button>
+            <button className='botonGenerico' onClick={() => onAdd(count)}>Agregar al Carrito </button>
         </div>
     );
 }

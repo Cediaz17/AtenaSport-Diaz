@@ -9,8 +9,9 @@
 {
     width: 75vh;
     height: 75vh;
-    padding: 10px;
-    margin: 10px;
+    margin: 20px;
+    border-style: solid;
+    overflow: hidden;
 }
 
 .imagen-detalle img {
@@ -18,28 +19,42 @@
     height: 100%;
     object-fit: contain;
 }
+.imagen-detalle img:hover{
+    transform: scale(1.1,1.1);
+    transition: all 3s;
+}
 .box-detalle-m
 {
     grid-column: auto;
     margin: 10px;
     width: 75vh;
-    height: 75vh;
+    height: 80vh;
 }
-.box-titulo
+.box-titulo-d
 {
     color: black;
     font-size: 15px;
-    padding: 15px;
+    margin: 15px;
+    border-bottom: 1px solid rgba(0,0,0,.1);
 }
-.box-precio
+.box-precio-d
 {
     color: black;
-    font-size: 20px;
-    padding: 15px;
+    font-size: 30px;
 }
 .box-descripcion
 {   
     border-top: 1px solid rgba(0,0,0,.1);
     margin: 15px;
     color: black;
+    height: 25%;
+    padding: 10px;
+    text-align: left;
+}
+
+.box-contador-g{
+    flex-direction: column;
+    justify-content: center;
+    text-align: -webkit-center;
+    display: inline-table;
 }

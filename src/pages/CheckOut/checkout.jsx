@@ -46,8 +46,13 @@ const CheckOut = () =>{
     return (
             <div className='fondo'>
             {
-                orderID ? <div> <h3>Felicitaciones tu compra se realizo correctamente.</h3> <p> Dentro de las 72hs llegara tu pedido: {orderID} </p> </div>
-                :
+                orderID ?   <div> <h3>Felicitaciones tu compra se realizo correctamente.</h3> 
+                                <p> Dentro de las 72hs llegara tu pedido: {orderID} </p> 
+                            </div> 
+                        :   cartContx.products.length === 0 ?   <div> <h3>Tu carrito está vacío.</h3> 
+                                                                    <p> Te invitamos a que conozcas nuestros productos </p> 
+                                                                </div>
+                        :
                 <div>
                         <form onSubmit={handleSubmit}>
                             <input type="text" name="Nombre" id="name" value={Nombre} placeholder='Nombre' onChange={handleInputChange} />

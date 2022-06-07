@@ -28,9 +28,11 @@ export const CartContextProvider = ({ children }) => {
     }
 
     const addProduct = (producto) => {
+        console.log('LISTA = ', productList)
+        console.log('PRODUCTO', producto)
         const idproducto = productList.findIndex(item => item.id === producto.id )
         if(idproducto !== -1) {
-            setProductList(productList.map( valor => valor.id === producto.id ? {...valor, cantidad : valor.cantidad + producto.cantidad} : valor));
+            setProductList(productList.map( valor => valor.id === producto.id ? {...valor, cant : valor.cant + producto.cant} : valor));
         } else {
             setProductList([producto, ...productList]);
         }
