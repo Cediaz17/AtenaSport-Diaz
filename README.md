@@ -49,7 +49,12 @@ Por último, para iniciar el proyecto en un servidor local se debe ejecutar el c
 `npm start`
 
 -----------------------------------------------------
+### Realizar una compra
 
+![Realizar una compra](/src/img/Atenea.wmv "Realizar una compra")
+
+
+-----------------------------------------------------
 
 Datos del alumno:
 Nombre: Cecilia Lorena Diaz
