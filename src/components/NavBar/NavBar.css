@@ -10,9 +10,13 @@
     justify-content: space-between;
     padding: 1.5rem;
 }
+.nav a{
+    text-decoration: none;
+}
 .logo{
-    color: #8e9eab;
+    color: #eef2f3;
     font-size: 2.5rem;
+    text-shadow: 4px 1px 4px #0a8199;
     font-family: 'Playfair Display', serif;
     padding-left: 1rem;
     -webkit-text-stroke-width: thin;

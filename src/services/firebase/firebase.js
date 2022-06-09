@@ -2,12 +2,12 @@ import {initializeApp} from "firebase/app";
 import {addDoc, doc, getDoc, collection, getFirestore, query, update, where, getDocs, updateDoc} from "firebase/firestore";
 
 const firebaseConfig = {
-    apiKey: "AIzaSyAq-hs0kKLA_wWGraYe8oxOcQEaLqokW9g",
-    authDomain: "ateneasport2022.firebaseapp.com",
-    projectId: "ateneasport2022",
-    storageBucket: "ateneasport2022.appspot.com",
-    messagingSenderId: "606692297213",
-    appId: "1:606692297213:web:51ed310ba199784427b194"
+    apiKey: process.env.REACT_APP_API_KEY,
+    authDomain: process.env.REACT_APP_AUTH_DOMAIN,
+    projectId: process.env.REACT_APP_PROJECT_ID,
+    storageBucket: process.env.REACT_APP_STORAGE_BUCKET,
+    messagingSenderId: process.env.REACT_APP_MESSAGING_SENDER_ID,
+    appId: process.env.REACT_APP_APP_ID
 };
 
 const app = initializeApp(firebaseConfig);

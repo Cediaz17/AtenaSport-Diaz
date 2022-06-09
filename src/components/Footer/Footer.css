@@ -1,0 +1,75 @@
+.container
+{
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+}
+.container a{
+    text-decoration: none;
+}
+.contenedorFooter{
+    align-items: center;
+    background-color: #232526;
+    color: white;
+    display: flex;
+    font-size: 1.3rem;
+    font-weight: bold;
+    justify-content: center;
+    padding: 0.5rem 8%;
+}
+
+/*Estilos especiales para el contenido del footer*/
+.linkedin
+{
+display: flex;
+flex-direction: row;
+align-items: center;
+}
+.footer-redes{
+    display: flex;
+    flex-direction: column;
+    width: 45%;
+}
+.footer-redes h3 {
+    font-size: 1.3rem;
+}
+.contenedorFooter__Linkedin
+{
+    display: flex;
+    flex-direction: column;
+    font-weight: bold;
+    padding: 1rem;
+    width: 60%;
+    align-items: center;
+}
+.contenedorFooter__Linkedin span{
+    margin: 0.5rem 0;
+    text-align: center;
+    font-size: 1rem;
+}
+.redes
+{
+    height: 60px;
+    margin: 0 10px;
+    width: 60px;
+}
+.redes img{
+    height: 100%;
+    width: 100%;
+}
+.redesPosicion
+{
+    display: flex;
+    justify-content: center;
+    padding: 0.5rem 0;
+    width: 170%;
+}
+.contenedorFooter__logo
+{
+    color: #eef2f3;
+    font-size: 2.5rem;
+    text-shadow: 4px 1px 4px #0a8199;
+    font-family: 'Playfair Display', serif;
+    padding-left: 1rem;
+    -webkit-text-stroke-width: thin;
+}

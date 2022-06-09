@@ -8,9 +8,11 @@ function NavBar(props)
     return (
         <div className="navbar">
             <div className="nav">
-                <div className="logo">
-                    Atenea Sport
-                </div>
+                <a href="/">
+                    <div className="logo">
+                        <p>Atenea Sport</p>
+                    </div>
+                </a>
                 <div className="navItem">
                     <NavLink to={'/'}> Inicio </NavLink>
                     <NavLink to={'/catalogo/Mujer'}> Mujer </NavLink>

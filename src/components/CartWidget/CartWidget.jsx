@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import './CartWidget.css'
-import carrito from '../img/carrito.png'
+import carrito from '../../img/carrito.png'
 import { Link } from 'react-router-dom';
 import CartContext from '../../store/Cart-Context';
 

@@ -2,6 +2,7 @@ import { createOrder, getItemById, updateItem } from '../../services/firebase/fi
 import React, { useContext, useState } from 'react';
 import CartContext from '../../store/Cart-Context';
 import Spinner from '../../components/spinner/spinner';
+import './checkout.css'
 const CheckOut = () =>{
     const [orderID, setOrderID] = useState()
     const [load, setLoad] = useState(false)
@@ -44,7 +45,10 @@ const CheckOut = () =>{
         cartContx.clear();
     };
     return (
-            <div className='fondo'>
+            <div className='checkout-fondo'>
+                <div className='checkout-titulo'>
+                    <h1>Finalinzado Compra...</h1>
+                </div>
             {
                 orderID ?   <div> <h3>Felicitaciones tu compra se realizo correctamente.</h3> 
                                 <p> Dentro de las 72hs llegara tu pedido: {orderID} </p> 
@@ -54,11 +58,24 @@ const CheckOut = () =>{
                                                                 </div>
                         :
                 <div>
-                        <form onSubmit={handleSubmit}>
-                            <input type="text" name="Nombre" id="name" value={Nombre} placeholder='Nombre' onChange={handleInputChange} />
-                            <input type="number" name="Telefono" id="phone" value={Telefono} placeholder='Telefono' onChange={handleInputChange} />
-                            <input type="email" name="Email" id="email" value={Email} placeholder='Correo Electronico' onChange={handleInputChange} />
-                            <input type="submit" value="Finalizar Compra" />
+                        <form className='checkout-form' onSubmit={handleSubmit}>
+                            <div className='checkout-form-estructura'>
+                                <div>
+                                    <h2>Datos Personales</h2>
+                                </div>
+                                <div className='checkout-form-grupo'>
+                                    <input className='checkout-form-grupo_input' type="text" name="Nombre" id="name" value={Nombre} required={true} maxLength={50} placeholder='Nombre' onChange={handleInputChange} />
+                                </div>
+                                <div className='checkout-form-grupo' >
+                                <input className='checkout-form-grupo_input' type="number" name="Telefono" id="phone" required={true} maxLength={25}  value={Telefono} placeholder='Telefono' onChange={handleInputChange} />
+                                </div>
+                                <div className='checkout-form-grupo'>
+                                <input className='checkout-form-grupo_input' type="email" name="Email" id="email" required={true} maxLength={50} value={Email} placeholder='Correo Electronico' onChange={handleInputChange} />
+                                </div>
+                                <div className='checkout-form-final'>
+                                    <input type="submit" value="Comprar" />
+                                </div>
+                            </div>
                         </form>
                     </div>
                         

@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
+import Footer from './components/Footer/Footer';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from 'react-router-dom';
 import { CartContextProvider } from './store/Cart-Context.js';
@@ -14,6 +15,9 @@ ReactDOM.render(
         <main>
           <App />
         </main>
+        <footer>
+          <Footer/>
+        </footer>
       </CartContextProvider>
     </BrowserRouter>
   </React.StrictMode>,
